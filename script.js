@@ -47,9 +47,11 @@ const CONFIG = {
   /* ---------- Nav: scrolled state, progress, burger ---------- */
   const nav = $("#nav");
   const bar = $("#progressBar");
+  const toTop = $("#toTop");
   const onScroll = () => {
     const y = window.scrollY;
     nav.classList.toggle("is-scrolled", y > 20);
+    toTop.classList.toggle("is-visible", y > 600);
     const h = document.documentElement.scrollHeight - innerHeight;
     bar.style.width = (h > 0 ? (y / h) * 100 : 0) + "%";
   };
